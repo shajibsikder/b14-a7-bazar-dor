@@ -9,6 +9,7 @@ import ProductCard from "@/components/ProductCard";
 import { ProductGridSkeleton } from "@/components/LoadingSkeleton";
 import { toBengaliNumber } from "@/lib/utils";
 import { ArrowLeft, ChevronDown } from "lucide-react";
+import Emoji from "@/components/Emoji";
 
 export default function CategoryPage() {
   const params = useParams();
@@ -98,7 +99,7 @@ export default function CategoryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="bg-white rounded-2xl border border-slate-200/80 p-6 flex items-center gap-4">
           <div className="w-14 h-14 rounded-full bg-[#f2f6f4] flex items-center justify-center text-3xl shrink-0">
-            {category?.icon || "🛒"}
+            <Emoji symbol={category?.icon || "🛒"} size={32} />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-slate-800">

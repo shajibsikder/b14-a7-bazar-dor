@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Product } from "@/types";
 import { toBengaliNumber, formatUnit } from "@/lib/utils";
 import Link from "next/link";
+import Emoji from "@/components/Emoji";
 
 interface PriceTickerProps {
   products: Product[];
@@ -35,7 +36,7 @@ export default function PriceTicker({ products }: PriceTickerProps) {
               href={`/product/${p.slug || p.id}`}
               className="inline-flex items-center gap-1.5 px-2 hover:opacity-80 transition-opacity"
             >
-              <span className="text-sm">{p.image || "📦"}</span>
+              <Emoji symbol={p.image || "📦"} size={16} />
               <span className="font-medium text-slate-800">{p.nameBn}</span>
               <span className="text-slate-600">
                 {toBengaliNumber(p.today)} টাকা/{formatUnit(p.unit).replace("প্রতি ", "")}

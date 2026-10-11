@@ -8,6 +8,7 @@ import { Product } from "@/types";
 import { toBengaliNumber, formatUnit } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import toast from "react-hot-toast";
+import Emoji from "@/components/Emoji";
 
 export default function ProductDetailsPage() {
   const params = useParams();
@@ -143,7 +144,7 @@ export default function ProductDetailsPage() {
         <div className="bg-white rounded-2xl border border-slate-200/80 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex items-center gap-5">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#f2f6f4] flex items-center justify-center text-4xl shrink-0">
-              {product.image || "📦"}
+              <Emoji symbol={product.image || "📦"} size={44} />
             </div>
             <div className="space-y-1">
               <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-800">

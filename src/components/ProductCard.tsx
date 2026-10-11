@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Product } from "@/types";
 import { toBengaliNumber, formatUnit } from "@/lib/utils";
 
+import Emoji from "@/components/Emoji";
+
 interface ProductCardProps {
   product: Product;
 }
@@ -18,7 +20,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     >
       <div className="flex items-center gap-3.5 mb-5">
         <div className="w-12 h-12 rounded-full bg-[#f2f6f4] flex items-center justify-center text-2xl shrink-0">
-          {product.image || "📦"}
+          <Emoji symbol={product.image || "📦"} size={26} />
         </div>
         <div className="min-w-0">
           <h3 className="font-bold text-slate-800 text-base group-hover:text-emerald-700 transition-colors truncate">

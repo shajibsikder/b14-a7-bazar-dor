@@ -8,6 +8,7 @@ import { toBengaliDate } from "@/lib/utils";
 import { Category } from "@/types";
 import { useAuth } from "@/context/AuthContext";
 import { ChevronDown, User as UserIcon, LogOut, Menu, X } from "lucide-react";
+import Emoji from "@/components/Emoji";
 
 interface NavbarProps {
   categories?: Category[];
@@ -171,7 +172,7 @@ export default function Navbar({ categories = defaultCategories }: NavbarProps) 
                       : "text-slate-600 hover:bg-slate-200/60"
                   }`}
                 >
-                  <span>{cat.icon}</span>
+                  <Emoji symbol={cat.icon} size={15} />
                   <span>{cat.nameBn}</span>
                 </Link>
               );
